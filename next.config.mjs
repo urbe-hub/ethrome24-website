@@ -45,18 +45,6 @@ const nextConfig = {
         source: "/winners",
         destination: "/winners/index.html",
       },
-      {
-        // The confirmation-ticket app is a separate Vercel deployment
-        // (ethrome-ticket). These proxy it under the official domain so the
-        // URL stays ethrome.org/ticket instead of redirecting to vercel.app.
-        // The app is prefix-aware: it computes its own /ticket base client-side.
-        source: "/ticket",
-        destination: "https://ethrome-ticket.vercel.app/index.html",
-      },
-      {
-        source: "/ticket/:path*",
-        destination: "https://ethrome-ticket.vercel.app/:path*",
-      },
     ];
   },
   async headers() {
